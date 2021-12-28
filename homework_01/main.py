@@ -4,7 +4,7 @@
 """
 
 
-def power_numbers():
+def power_numbers(*numbers):
     """
     функция, которая принимает N целых чисел,
     и возвращает список квадратов этих чисел
@@ -36,7 +36,7 @@ def is_prime(number: int):
     return True
 
 
-def filter_numbers():
+def filter_numbers(numbers: list, filter_type: str):
     """
     функция, которая на вход принимает список из целых чисел,
     и возвращает только чётные/нечётные/простые числа
