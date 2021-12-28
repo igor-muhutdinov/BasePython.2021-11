@@ -30,6 +30,8 @@ def is_prime(number: int):
     >>> is_prime(3)
     <<< True
     """
+    if number in (0, 1):
+        return False
     for i in range(2, number):
         if number % i == 0:
             return False
