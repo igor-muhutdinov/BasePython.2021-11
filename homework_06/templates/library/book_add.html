@@ -1,0 +1,27 @@
+{% extends 'library/base.html' %}
+
+{% block title %}
+Add book
+{% endblock %}
+
+{% block body %}
+<div>
+    <h3>Add new book</h3>
+    <form method="post">
+        <p>
+            <label for="book-title-id">Book title:</label>
+            <input class="" id="book-title-id" name="book-title" type="text" required>
+        </p>
+        <p>
+            <label for="author-id-id">Author:</label>
+            <select id="author-id-id" name="author-id" required>
+                <option disabled>Выберите автора</option>
+                {% for author in authors %}
+                    <option value={{ author.id }}>{{ author.name }}</option>
+                {% endfor %}
+            </select>
+        </p>
+      <button class="btn btn-primary" type="submit">Add</button>
+    </form>
+  </div>
+{% endblock %}

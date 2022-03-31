@@ -1,0 +1,21 @@
+{% extends 'library/base.html' %}
+
+{% block title %}
+Authors
+{% endblock %}
+
+{% block body %}
+<h1>Authors</h1>
+<div>
+    <ul>
+        {% for author in authors %}
+        <li>
+            <a href="{{ url_for('library_app.author_details', author_id=author.id) }}">
+                {{ author.name }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('library_app.author_add') }}">Add new author</a>
+</div>
+{% endblock %}

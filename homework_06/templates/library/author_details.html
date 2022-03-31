@@ -1,0 +1,51 @@
+{% extends 'library/base.html' %}
+
+{% block title %}
+Author details
+{% endblock %}
+
+{% block body %}
+<div>
+    <h3>{{ author.name }}</h3>
+    <h5>Author's books:</h5>
+    <ul>
+        {% for book in books %}
+        <li>
+            <a href="{{ url_for('library_app.book_details', book_id=book.id) }}">
+                {{ book.title }}
+                </a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+<div>
+  <button class="btn btn-primary" onclick="addNewBook()">
+    Add new book
+  </button>
+</div>
+<div>
+  <button class="btn btn-danger my-2" onclick="deleteAuthor()">
+    Delete author
+  </button>
+</div>
+
+<script>
+    function addNewBook() {
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", "/books/add/", true);
+      xhr.onload = function () {
+        window.location.href = "{{ url_for('library_app.book_add') }}"
+      }
+      xhr.send();
+    }
+
+    function deleteAuthor() {
+      const xhr = new XMLHttpRequest();
+      xhr.open("DELETE", document.URL, true);
+      xhr.onload = function () {
+        window.location.href = "{{ url_for('library_app.authors') }}"
+      }
+      xhr.send(null);
+    }
+  </script>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'library/base.html' %}
+
+{% block title %}
+Add author
+{% endblock %}
+
+{% block body %}
+<div>
+    <h3>Add new author</h3>
+    <form method="post">
+      <label for="author-name-id">Author name:</label>
+      <input class="" id="author-name-id" name="author-name" type="text" required>
+      <button class="btn btn-primary" type="submit">Add</button>
+    </form>
+  </div>
+{% endblock %}

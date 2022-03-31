@@ -1,0 +1,20 @@
+{% extends 'library/base.html' %}
+
+{% block title %}
+Library main page
+{% endblock %}
+
+{% block body %}
+<h1>What to read next?</h1>
+{% if book is none %}
+No books in library
+{% else %}
+    <h3>
+        <a href="{{ url_for('library_app.author_details', author_id=book.author.id) }}">
+                    {{ book.author.name }}
+                    </a> - <a href="{{ url_for('library_app.book_details', book_id=book.id) }}">
+                    {{ book.title }}
+                    </a>
+    </h3>
+{% endif %}
+{% endblock %}
