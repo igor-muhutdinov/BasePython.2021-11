@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> {{ page_title|default:"Library" }} </title>
+</head>
+<body>
+
+{% block header %}
+    <a href="{% url 'main' %}">Main page</a>
+    <a href="{% url 'author_list' %}">Authors list</a>
+    <a href="{% url 'book_list' %}">Books list</a>
+{% endblock %}
+
+{% block body %}
+{% endblock %}
+
+</body>
+</html>

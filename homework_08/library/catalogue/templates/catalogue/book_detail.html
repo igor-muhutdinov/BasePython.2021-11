@@ -1,0 +1,7 @@
+{% extends 'catalogue/base.html' %}
+
+{% block body %}
+    <p>{{ book }} ({{ book.author }})</p>
+    <a href="{% url 'book_update' book.pk %}">Update book info</a>
+    <a href="{% url 'book_delete' book.pk %}">Delete book</a>
+{% endblock %}

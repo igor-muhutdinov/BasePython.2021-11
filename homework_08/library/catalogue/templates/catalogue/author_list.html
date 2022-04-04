@@ -1,0 +1,15 @@
+{% extends 'catalogue/base.html' %}
+
+{% block body %}
+    <ul>
+        {% for author in authors %}
+            <li>
+                <a href="{% url 'author_detail' author.pk %}">
+                    {{ author }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    <p></p>
+    <a href="{% url 'author_create' %}">New author</a>
+{% endblock %}
